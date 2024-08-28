@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Signup from "./Components/SignUp";
 import CoverPage from "./Components/CoverPage";
 import HomePage from "./Components/HomePage";
 import { AuthContext } from "./Context/AuthContext";

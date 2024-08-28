@@ -11,7 +11,7 @@ export const useLoginHook = () => {
         setError(null);
         setLoading(true);
         try {
-            let res = await fetch("http://127.0.0.1:4000/api/login", {
+            let res = await fetch("https://kudosware-backend.onrender.com/api/login", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

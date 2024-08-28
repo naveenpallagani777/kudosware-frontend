@@ -23,7 +23,7 @@ export const useSignupHook = () => {
                 formData.append('resume', resumeFile);
             }
 
-            const res = await fetch("http://127.0.0.1:4000/api/signup", {
+            const res = await fetch("https://kudosware-backend.onrender.com/api/signup", {
                 method: 'POST',
                 body: formData // Send form data including file
             });

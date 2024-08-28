@@ -5,11 +5,12 @@ import { AuthContext } from "../Context/AuthContext";
 export const useLoginHook = () => {
     let [loading,setLoading] = useState(null);
     let [error,setError] = useState(null);
-    let {user,setUser} = useContext(AuthContext);
+    let {user,setUser,setLoadingpage} = useContext(AuthContext);
 
     const login = async (body) => {
         setError(null);
         setLoading(true);
+        setLoadingpage(true);
         try {
             let res = await fetch("https://kudosware-backend.onrender.com/api/login", {
                 method: 'POST',
@@ -31,6 +32,7 @@ export const useLoginHook = () => {
             console.log("unable to fetch");
         }finally {
             setLoading(false);
+            setLoadingpage(false);
         }
     }
 

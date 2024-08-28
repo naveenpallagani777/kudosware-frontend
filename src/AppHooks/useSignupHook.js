@@ -4,11 +4,12 @@ import { AuthContext } from "../Context/AuthContext";
 export const useSignupHook = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const { user, setUser } = useContext(AuthContext);
+    const { user, setUser, setLoadingpage } = useContext(AuthContext);
 
     const signup = async (body, resumeFile = null) => {
         setError(null);
         setLoading(true);
+        setLoadingpage(true);
 
         try {
             const formData = new FormData();
@@ -42,6 +43,7 @@ export const useSignupHook = () => {
             console.error(err); // Log error details for debugging
         } finally {
             setLoading(false);
+            setLoadingpage(false);
         }
     };
 

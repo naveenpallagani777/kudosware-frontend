@@ -13,6 +13,7 @@ export const AuthContextProvider = ({children}) => {
 
     const [user, setUser] = useState(null);
     const [Auth, setAuth] = useState(false);
+    let [loadingpage,setLoadingpage] = useState(false);
 
     useEffect(() => {
         // Load user data from local storage on initial load
@@ -25,7 +26,7 @@ export const AuthContextProvider = ({children}) => {
     console.log(user);
 
     return (
-        <AuthContext.Provider value={{ formData, setFormData, user, setUser, Auth, setAuth }}>
+        <AuthContext.Provider value={{ formData, setFormData, user, setUser, Auth, setAuth,loadingpage, setLoadingpage}}>
             {children}
         </AuthContext.Provider>
     );

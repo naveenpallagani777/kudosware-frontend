@@ -5,6 +5,7 @@ import { AuthContext } from "./Context/AuthContext";
 import { useContext } from "react";
 import Login from "./Components/Login";
 import Signup1 from "./Components/SignUp1";
+import Loader from "./Components/Loader"
 
 function App() {
   const { user,Auth,loadingpage } = useContext(AuthContext);
@@ -19,7 +20,7 @@ function App() {
               <Navigate to="/home" />
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-2 px-3 md:px-[12%] lg:px-[6%] border border-black h-screen items-center justify-center">
-                {loadingpage && <div className="text-red-700 fixed top-0 left-0 z-10 h-screen w-screen flex items-center justify-center bg-black bg-opacity-60 font-extrabold text-3xl">LOADING...</div>}
+                {loadingpage && <Loader />}
                 <CoverPage />
                 {Auth && <Login />}
                 {!Auth && <Signup1 />}

@@ -40,7 +40,7 @@ export const useSignupHook = () => {
             }
         } catch (err) {
             setError("Unable to fetch. Please try again.");
-            console.error(err); // Log error details for debugging
+            console.error(err); 
         } finally {
             setLoading(false);
             setLoadingpage(false);

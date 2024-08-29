@@ -32,8 +32,14 @@ const Signup1 = () => {
             return;
         }
 
-        // Start the signup process and show loading
         signup(formData);
+        setFormData({
+            password: "",
+            confirmPassword: "",
+            firstName: "",
+            lastName: "",
+            email: ""
+        });
     };
 
     return (

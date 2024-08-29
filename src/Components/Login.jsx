@@ -9,6 +9,13 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         login({ email: formData.email, password: formData.password });
+        setFormData({
+            password: "",
+            confirmPassword: "",
+            firstName: "",
+            lastName: "",
+            email: ""
+        });
     };
 
     const handleChange = (e) => {

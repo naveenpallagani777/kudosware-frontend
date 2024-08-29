@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from "react";
 const HomePage = () => {
     const { user,setUser } = useContext(AuthContext);
     const [error, setError] = useState(null);
-    const [viewResume,setViewResume] = useState("");
 
     useEffect(() => {
         
@@ -12,9 +11,6 @@ const HomePage = () => {
 
     const haandleViewResume = () => {
         try {
-            // Debugging logs to understand the structure of user and user.resume
-            console.log("User object: ", user);
-            console.log("User resume data: ", user?.resume?.data);
 
             if (!user || !user.resume || !Array.isArray(user.resume.data?.data)) {
                 throw new Error("Invalid resume data format");
@@ -31,7 +27,7 @@ const HomePage = () => {
 
             // Open the PDF in a new tab or download it
             window.open(url, '_blank');
-            setViewResume(url);
+            
         } catch (err) {
             console.error("Error converting PDF data: ", err);
             setError("Failed to load resume. Please try again later.");
